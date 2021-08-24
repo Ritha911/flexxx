@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="style1.css">
+<title>registration form</title>
+<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style2.css"/>
+<script type="text/javascript">
+	function display(){
+		if(document.myform.fname.value == "" || !isNaN(document.myform.fname.value)){
+			alert("First name is required");
+			document.myform.fname.value
+			return false;
+		}
+			if(document.myform.mname.value == "" || !isNaN(document.myform.mname.value)){
+			alert("Middle name is required");
+			document.myform.lname.value
+			return false;
+		}
+			if(document.myform.sname.value == "" || !isNaN(document.myform.sname.value)){
+			alert("Surname is required");
+			document.myform.sname.value
+			return false;
+		}
+
+			if(document.myform.password.value == "" ){
+			alert("Provide your password");
+			document.myform.password.value
+			return false;
+		}
+		else if(document.myform.password.value.length <10){
+			alert("Password length is invalid");
+			return false;
+		}
+			if(document.myform.email.value == "" ){
+			alert("Email should not be empty");
+			document.myform.email.value.focus();
+			return false;
+		}
+			var emailid= document.myform.email.value;
+				atpos=emailid.indexOf("@");
+				dotpos=emailid.lastIndexOf(".");
+
+				if(atpos < 1 || (dotpos - atpos) < 2){
+					alert("Write the correct Email Address");
+					document.myform.email.value.focus();
+					return false;
+				}
+
+		if(isNaN(document.myform.mobile.value)) {
+				alert("Wrrite mobile inform of a number");
+			 	
+				return false;
+			}
+			else if (document.myform.mobile.value == "") {
+				alert("mobile plot should not be empty");
+				return false;
+			}
+	}</script>
+</head>
+
+<body style="background-color: #12343b; text-align:left;">
+	<nav>
+		<a href="#">LOGO</a>
+		<div class="toggle"></div>
+			<ul class="menu">
+				<li class="active"><a href="index.html#main">HOME</a></li>
+				<li class="active"><a href="index.html#about">ABOUT ME</a></li>
+				<li class="active"><a href="index.html#register">REGISTER</a></li>
+				<li class="active"><a href="course.php">COURSE</a></li>
+				<li class="active"><a href="./cv/cv.php">CV</a></li>
+				<li class="active"><a href="index.html#contact-form">CONTACTS</a></li>
+		  <li class="active"><a href="logout.php">LOGOUT</a></li>
+				
+			</ul>
+	
+				<a class="lang" href="#">En</a>
+			</nav> <br><br> <br>
+<h1 style="text-align:left; font-family: segoe UI black;">Registration Form</h1>
+<br><br>
+
+<form name="myform" onsubmit="return display()" action="addrecord.php" method="POST" enctype="multipart/form-data">
+<div class="row" >
+<div class="form" style="background-color: #bbb;">
+<label>First name:</label>
+<input type="text" id="fname" name="fname" required="required"><br><br>
+
+<label>Middle name:</label>
+<input type="text" id="mname" name="mname" required="required"><br><br>
+
+<label>Surname:</label>
+<input type="text" id="sname" name="sname" required="required"><br><br>
+
+<label>Username:</label>
+<input type="text" id="uname" name="uname" required="required"><br><br>
+
+<label>Password:</label>&nbsp
+<input type="password" id="password" name="pword" required="required"><br><br>
+
+<label>CV:</label>
+<input type="file" value="file"accept="application/msword,application/pdf,text/plain" name="cv" required="required"> <br><br>
+</div>
+
+<div class="form" style="background-color: #aaa;">
+<h1 style="font-family: segoe UI black">Contacts:</h1>
+
+<label>Email:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<input type="text" id="email" name="email" required="required"><br><br>
+
+<label>Mobile:</label>&nbsp
+<input type="text" id="mobile" name="mobile" required="required"><br><br>
+
+<h1 style="font-family: segoe UI black">Social Media Account</h1>
+
+<label>Facebook:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<input type="text" id="fbook" name="fbook" required="required"><br><br>
+
+<label>Twitter:</label>&nbsp
+<input type="text" id="tter" name="tter" required="required"><br><br>   
+
+<label>Istagram:</label>&nbsp
+<input type="text" id="igram" name="igram" required="required"><br><br> 
+</div>
+</div>
+
+<br><br>
+
+
+<div class="submit">
+<label></label>
+<input type="submit" name="submit"><br><br>
+</div>
+<div class="reset">
+<label></label>
+<input type="reset" name="reset">
+</div>
+</form>
+</body>
+</html>
+
+
